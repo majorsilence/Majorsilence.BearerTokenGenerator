@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="250"
+        x:Class="Majorsilence.BearerTokenGenerator.MainWindow"
+        Title="Majorsilence.BearerTokenGenerator">
+    <StackPanel Margin="20">
+        <StackPanel>
+            <TextBlock Text="Valid Issuer" FontWeight="Bold"/>
+            <TextBox x:Name="issuerTextBox" Text="https://" />
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Valid Audience" FontWeight="Bold"/>
+            <TextBox x:Name="audienceTextBox" Text="https://" />
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Expires(minutes)" FontWeight="Bold"/>
+            <NumericUpDown x:Name="expiresNumericUpDown" Value="43200"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Not Before" FontWeight="Bold"/>
+            <DatePicker x:Name="notBefore" />
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Secret" FontWeight="Bold"/>
+            <TextBox x:Name="secretTextBox"/>
+        </StackPanel>
+        <Button x:Name="generateButton" Content="Generate Output" Margin="0,20,0,0" Click="GenerateButton_Click" />
+        <TextBox x:Name="outputTextBlock" TextWrapping="Wrap" Margin="0,20,0,0"/>
+    </StackPanel>
+</Window>

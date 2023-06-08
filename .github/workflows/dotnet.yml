@@ -24,7 +24,7 @@ jobs:
     - name: Archive artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: linux-x64
+        name:  Majorsilence.BearerTokenGenerator-linux-x64
         path: |
           Majorsilence.BearerTokenGenerator/bin/Release/net6.0/linux-x64/publish
         retention-days: 1
@@ -46,7 +46,7 @@ jobs:
     - name: Archive artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: win-x64
+        name: Majorsilence.BearerTokenGenerator-win-x64
         path: |
           Majorsilence.BearerTokenGenerator/bin/Release/net6.0/win-x64/publish
         retention-days: 1
@@ -68,7 +68,7 @@ jobs:
     - name: Archive artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: osx-x64
+        name: Majorsilence.BearerTokenGenerator-osx-x64
         path: |
           Majorsilence.BearerTokenGenerator/bin/Release/net6.0/osx-x64/publish
         retention-days: 1

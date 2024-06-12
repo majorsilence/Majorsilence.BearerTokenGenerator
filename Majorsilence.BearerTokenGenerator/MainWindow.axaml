@@ -26,6 +26,16 @@
             <TextBlock Text="Secret" FontWeight="Bold"/>
             <TextBox x:Name="secretTextBox"/>
         </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Security Algorithm" FontWeight="Bold"/>
+            <ComboBox x:Name="algorithmComboBox" Items="{Binding SecurityAlgorithmsList}" SelectedItem="{Binding SelectedAlgorithm}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Key}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
         <Button x:Name="generateButton" Content="Generate Output" Margin="0,20,0,0" Click="GenerateButton_Click" />
         <TextBox x:Name="outputTextBlock" TextWrapping="Wrap" Margin="0,20,0,0"/>
     </StackPanel>

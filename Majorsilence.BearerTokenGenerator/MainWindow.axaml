@@ -2,41 +2,60 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="250"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
         x:Class="Majorsilence.BearerTokenGenerator.MainWindow"
         Title="Majorsilence.BearerTokenGenerator">
     <StackPanel Margin="20">
         <StackPanel>
-            <TextBlock Text="Valid Issuer" FontWeight="Bold"/>
+            <TextBlock Text="Valid Issuer" FontWeight="Bold" />
             <TextBox x:Name="issuerTextBox" Text="https://" />
         </StackPanel>
-        <StackPanel>
-            <TextBlock Text="Valid Audience" FontWeight="Bold"/>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Valid Audience" FontWeight="Bold" />
             <TextBox x:Name="audienceTextBox" Text="https://" />
         </StackPanel>
-        <StackPanel>
-            <TextBlock Text="Expires(minutes)" FontWeight="Bold"/>
-            <NumericUpDown x:Name="expiresNumericUpDown" Value="43200"/>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Expires(minutes)" FontWeight="Bold" />
+            <NumericUpDown x:Name="expiresNumericUpDown" Value="43200" />
         </StackPanel>
-        <StackPanel>
-            <TextBlock Text="Not Before" FontWeight="Bold"/>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Not Before" FontWeight="Bold" />
             <DatePicker x:Name="notBefore" />
         </StackPanel>
-        <StackPanel>
-            <TextBlock Text="Secret" FontWeight="Bold"/>
-            <TextBox x:Name="secretTextBox"/>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Secret" FontWeight="Bold" />
+            <TextBox x:Name="secretTextBox" />
         </StackPanel>
-        <StackPanel>
-            <TextBlock Text="Security Algorithm" FontWeight="Bold"/>
-            <ComboBox x:Name="algorithmComboBox" Items="{Binding SecurityAlgorithmsList}" SelectedItem="{Binding SelectedAlgorithm}">
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Security Algorithm" FontWeight="Bold" />
+            <ComboBox x:Name="algorithmComboBox" ItemsSource="{Binding SecurityAlgorithmsList}"
+                      SelectedItem="{Binding SelectedAlgorithm}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Key}"/>
+                        <TextBlock Text="{Binding Key}" />
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
-        <Button x:Name="generateButton" Content="Generate Output" Margin="0,20,0,0" Click="GenerateButton_Click" />
-        <TextBox x:Name="outputTextBlock" TextWrapping="Wrap" Margin="0,20,0,0"/>
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Claims" FontWeight="Bold" />
+            <DataGrid x:Name="claimsDataGrid" ItemsSource="{Binding ClaimsList}" IsReadOnly="False"
+                      CanUserResizeColumns="True"
+                      GridLinesVisibility="All"
+                      BorderThickness="1" BorderBrush="Gray"
+                      VerticalScrollBarVisibility="Visible"
+                      Height="100">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Claim" Binding="{Binding Key}" Width="*" />
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <WrapPanel>
+                <Button Content="Add Claim" Click="AddClaim_Click" />
+                <Button Content="Remove Claim" Click="RemoveClaim_Click" />
+            </WrapPanel>
+        </StackPanel>
+        <Button x:Name="generateButton" Content="Generate Output" Margin="0,10,0,0" Click="GenerateButton_Click" />
+        <TextBox x:Name="outputTextBlock" TextWrapping="Wrap" Margin="0,10,0,0" />
     </StackPanel>
 </Window>

@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="Majorsilence.BearerTokenGenerator/App.axaml" value="Majorsilence.BearerTokenGenerator/Majorsilence.BearerTokenGenerator.csproj" />
         <entry key="Majorsilence.BearerTokenGenerator/MainWindow.axaml" value="Majorsilence.BearerTokenGenerator/Majorsilence.BearerTokenGenerator.csproj" />
       </map>
     </option>

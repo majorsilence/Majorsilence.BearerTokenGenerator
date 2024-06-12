@@ -26,7 +26,7 @@ jobs:
       with:
         name:  Majorsilence.BearerTokenGenerator-linux-x64
         path: |
-          Majorsilence.BearerTokenGenerator/bin/Release/net6.0/linux-x64/publish
+          Majorsilence.BearerTokenGenerator/bin/Release/net8.0/linux-x64/publish
         retention-days: 1
 
   windows-build:
@@ -48,7 +48,7 @@ jobs:
       with:
         name: Majorsilence.BearerTokenGenerator-win-x64
         path: |
-          Majorsilence.BearerTokenGenerator/bin/Release/net6.0/win-x64/publish
+          Majorsilence.BearerTokenGenerator/bin/Release/net8.0/win-x64/publish
         retention-days: 1
 
   mac-build:
@@ -70,5 +70,5 @@ jobs:
       with:
         name: Majorsilence.BearerTokenGenerator-osx-x64
         path: |
-          Majorsilence.BearerTokenGenerator/bin/Release/net6.0/osx-x64/publish
+          Majorsilence.BearerTokenGenerator/bin/Release/net8.0/osx-x64/publish
         retention-days: 1
